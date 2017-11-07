@@ -30,6 +30,10 @@ const mutations = {
 // Vue methods中的方法。需要执行的方法，异步操作在此执行。
 const actions = {
   increment: ({ commit }) => commit('increment'),
+  // 以上用的参数解构，完整写法：
+  // increment: function(context) {
+  //    context.commit('increment');
+  // }
   decrement: ({ commit }) => commit('decrement'),
   incrementIfOdd ({ commit, state }) {
     if ((state.count + 1) % 2 === 0) {
@@ -45,6 +49,18 @@ const actions = {
     })
   }
 }
+// actions 高级用法
+// 
+// 假设 getData() 和 getOtherData() 返回的是 Promise
+// actions: {
+//   async actionA ({ commit }) {
+//     commit('gotData', await getData())
+//   },
+//   async actionB ({ dispatch, commit }) {
+//     await dispatch('actionA') // 等待 actionA 完成
+//     commit('gotOtherData', await getOtherData())
+//   }
+// }
 
 // getters are functions
 // Vue computed中的计算函数。
