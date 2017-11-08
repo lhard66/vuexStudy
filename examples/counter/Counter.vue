@@ -12,11 +12,14 @@
 import { mapGetters, mapActions } from 'vuex'
 
 export default {
+  // mapGetters 辅助函数仅仅是将 store 中的 getter 映射到局部计算属性：
   computed: mapGetters([
     'evenOrOdd'
   ]),
   methods: mapActions([
+    // mapActions将 `this.increment()` 映射为 `this.$store.dispatch('increment')`
     'increment',
+    // vuex使用store.dispatch('increment')来触发方法
     'decrement',
     'incrementIfOdd',
     'incrementAsync'
