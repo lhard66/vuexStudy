@@ -23,6 +23,8 @@ export default {
     'addToCart'
   ]),
   created () {
+    // 用来触发products.js中actions的getAllProducts方法。
+    // getAllProducts方法commit->mutations中的types.RECEIVE_PRODUCTS，改变state中的数值。
     this.$store.dispatch('getAllProducts')
   }
 }
