@@ -18,7 +18,10 @@ import { mapGetters } from 'vuex'
 
 export default {
   computed: {
+    // 使用对象展开运算符将 getter 混入 computed 对象中
     ...mapGetters({
+      // 如果你想将一个 getter 属性另取一个名字，使用对象形式：
+      // products表示原名 --> cartProducts表示另取的名字。
       products: 'cartProducts',
       checkoutStatus: 'checkoutStatus'
     }),

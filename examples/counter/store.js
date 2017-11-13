@@ -63,7 +63,7 @@ const actions = {
 // }
 
 // getters are functions
-// Vue computed中的计算函数。
+// Vue computed中的计算函数。-->可以认为是 store 的计算属性
 const getters = {
   evenOrOdd: state => state.count % 2 === 0 ? 'even' : 'odd'
 }

@@ -15,6 +15,7 @@ const debug = process.env.NODE_ENV !== 'production'
 export default new Vuex.Store({
   actions,
   getters,
+  // 包含了子模块的对象，会被合并到 store
   modules: {
     cart,
     products
